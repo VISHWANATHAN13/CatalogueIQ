@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What is the battery life of the boAt Airdopes 141?",
+    "answer": "The boAt Airdopes 141 provides up to 42 hours of total playback.",
+    "query_type": "product_factual_lookup"
+  },
+  {
+    "question": "Can I return a fashion item bought during a sale?",
+    "answer": "The item can be returned only if it satisfies the applicable return eligibility conditions in the ShopSmart India returns policy.",
+    "query_type": "policy_eligibility"
+  },
+  {
+    "question": "Which wireless earbuds under ₹3000 have the best noise cancellation and at least 20 hours of battery life?",
+    "answer": "The recommendation should compare the retrieved eligible earbuds based on their noise cancellation capability and battery life.",
+    "query_type": "comparative_recommendation"
+  },
+  {
+    "question": "What image requirements must an Electronics seller follow when listing a product?",
+    "answer": "The seller must follow the image specifications defined in the Electronics listing requirements.",
+    "query_type": "seller_policy_lookup"
+  },
+  {
+    "question": "I bought a product during a promotional sale and it has a defect. Can I return it and when will I receive my refund?",
+    "answer": "The answer requires combining the applicable promotional terms with the returns and refunds policy.",
+    "query_type": "multi_hop"
+  }
+]

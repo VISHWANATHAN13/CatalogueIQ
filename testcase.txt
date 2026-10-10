@@ -1,0 +1,50 @@
+# Application Pipeline Validation Test Cases
+**Project:** Product Intelligence RAG Pipeline  
+**Purpose:** Validate the application pipeline using test cases specifically designed for the ingested dataset.
+
+---
+
+## TC01: Direct Product Lookup
+
+**Objective:** Validate product retrieval and factual answer generation.
+
+**Test Query:**
+
+What are the key features, price, and rating of the Sony WH-CH720N?
+
+**Expected Answer:**
+
+- **Product:** Sony WH-CH720N
+- **Price:** ₹7,990
+- **Rating:** 4.5
+- **Key Features:**
+  - Active Noise Cancellation (ANC)
+  - Up to 35-hour battery life
+  - Bluetooth 5.3
+  - Lightweight design
+
+**Validation Criteria:**
+- Retrieves the correct product information.
+- Returns the expected price and rating.
+- Includes the key features supported by the ingested catalogue.
+
+---
+
+## TC02: Comparative Recommendation
+
+**Objective:** Validate multi-document retrieval and comparative reasoning.
+
+**Test Query:**
+
+Compare the boAt Airdopes 141 and Realme Buds Air 3 in terms of price, battery life, Bluetooth version, and ANC. Which one offers ANC?
+
+**Expected Answer:**
+
+| Feature | boAt Airdopes 141 | Realme Buds Air 3 |
+|---|---|---|
+| Price | ₹1,299 | ₹2,499 |
+| Battery Life | Up to 42 hours | 8 hours |
+| Bluetooth Version | 5.0 | 5.3 |
+| Noise Cancellation | ENx technology | Active Noise Cancellation (ANC) |
+
+**Conclusion:** The Realme Buds Air 

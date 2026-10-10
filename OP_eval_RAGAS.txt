@@ -1,0 +1,101 @@
+[2026-09-15 21:04:30] INFO     | __main__           | <module>                  | ChatOpenAI initialized for CatalogueIQ RAGAS evaluation: model=gpt-4o-mini
+[2026-09-15 21:04:30] INFO     | __main__           | <module>                  | Starting CatalogueIQ RAGAS evaluation script
+[2026-09-15 21:04:30] INFO     | __main__           | evaluate_rag_system       | ======================================================================
+[2026-09-15 21:04:30] INFO     | __main__           | evaluate_rag_system       | CATALOGUEIQ RAGAS EVALUATION STARTED
+[2026-09-15 21:04:30] INFO     | __main__           | evaluate_rag_system       | ======================================================================
+[2026-09-15 21:04:30] INFO     | __main__           | load_test_data            | Loading CatalogueIQ test data from: C:\data\2531814-CatalogueIQ\documentation\seed\qna_test.json
+[2026-09-15 21:04:30] INFO     | __main__           | load_test_data            | Loaded 5 CatalogueIQ evaluation questions
+[2026-09-15 21:04:30] WARNING  | __main__           | evaluate_rag_system       | CatalogueIQ specification expects 20 evaluation questions, but 5 were found.
+[2026-09-15 21:04:30] INFO     | __main__           | evaluate_rag_system       | CatalogueIQ query type distribution: {'product_factual_lookup': 1, 'policy_eligibility': 1, 'comparative_recommendation': 1, 'seller_policy_lookup': 1, 'multi_hop': 1}
+[2026-09-15 21:04:30] INFO     | __main__           | evaluate_rag_system       | [1/5] Evaluating CatalogueIQ query type='product_factual_lookup': What is the battery life of the boAt Airdopes 141?
+[2026-09-15 21:04:30] DEBUG    | __main__           | call_catalogueiq          | POST http://localhost:8000/ask with question='What is the battery life of the boAt Airdopes 141?'
+[2026-09-15 21:04:35] INFO     | __main__           | evaluate_rag_system       | Generated answer: The battery life of the boAt Airdopes 141 is up to 42 hours....
+[2026-09-15 21:04:35] INFO     | __main__           | evaluate_rag_system       | Retrieved 10 context(s)
+[2026-09-15 21:04:35] DEBUG    | __main__           | evaluate_rag_system       | CatalogueIQ sample 1 appended
+[2026-09-15 21:04:35] INFO     | __main__           | evaluate_rag_system       | [2/5] Evaluating CatalogueIQ query type='policy_eligibility': Can I return a fashion item bought during a sale?
+[2026-09-15 21:04:35] DEBUG    | __main__           | call_catalogueiq          | POST http://localhost:8000/ask with question='Can I return a fashion item bought during a sale?'
+[2026-09-15 21:04:39] INFO     | __main__           | evaluate_rag_system       | Generated answer: The retrieved context does not provide specific information regarding the return policy for fashion items bought during a sale. Therefore, I cannot co...
+[2026-09-15 21:04:39] INFO     | __main__           | evaluate_rag_system       | Retrieved 10 context(s)
+[2026-09-15 21:04:39] DEBUG    | __main__           | evaluate_rag_system       | CatalogueIQ sample 2 appended
+[2026-09-15 21:04:46] INFO     | __main__           | evaluate_rag_system       | Retrieved 10 context(s)
+[2026-09-15 21:04:46] DEBUG    | __main__           | evaluate_rag_system       | CatalogueIQ sample 3 appended
+[2026-09-15 21:04:46] INFO     | __main__           | evaluate_rag_system       | [4/5] Evaluating CatalogueIQ query type='seller_policy_lookup': What image requirements must an Electronics seller follow when listing a product?
+[2026-09-15 21:04:46] DEBUG    | __main__           | call_catalogueiq          | POST http://localhost:8000/ask with question='What image requirements must an Electronics seller follow when listing a product?'
+[2026-09-15 21:04:50] INFO     | __main__           | evaluate_rag_system       | Generated answer: The retrieved context does not provide any specific image requirements that an Electronics seller must follow when listing a product. Therefore, the i...
+[2026-09-15 21:04:50] INFO     | __main__           | evaluate_rag_system       | Retrieved 10 context(s)
+[2026-09-15 21:04:50] DEBUG    | __main__           | evaluate_rag_system       | CatalogueIQ sample 4 appended
+[2026-09-15 21:04:50] INFO     | __main__           | evaluate_rag_system       | [5/5] Evaluating CatalogueIQ query type='multi_hop': I bought a product during a promotional sale and it has a defect. Can I return it and when will I receive my refund?
+[2026-09-15 21:04:50] DEBUG    | __main__           | call_catalogueiq          | POST http://localhost:8000/ask with question='I bought a product during a promotional sale and it has a defect. Can I return it and when will I receive my refund?'
+[2026-09-15 21:04:54] INFO     | __main__           | evaluate_rag_system       | Generated answer: The retrieved context does not provide specific information on return policies, refund timelines, or promotional sale conditions for defective product...
+[2026-09-15 21:04:54] INFO     | __main__           | evaluate_rag_system       | Retrieved 10 context(s)
+[2026-09-15 21:04:54] DEBUG    | __main__           | evaluate_rag_system       | CatalogueIQ sample 5 appended
+[2026-09-15 21:04:54] INFO     | __main__           | evaluate_rag_system       | Creating EvaluationDataset with 5 samples
+[2026-09-15 21:04:54] INFO     | __main__           | evaluate_rag_system       | CatalogueIQ RAGAS metrics: ['faithfulness', 'answer_relevancy', 'context_precision']
+[2026-09-15 21:04:54] INFO     | __main__           | evaluate_rag_system       | Running RAGAS evaluation (max_workers=16, timeout=60s)...
+[2026-09-15 21:05:17] INFO     | __main__           | evaluate_rag_system       | CatalogueIQ RAGAS evaluation complete
+
+
+====================================================================================================
+CATALOGUEIQ RAGAS EVALUATION RESULTS
+====================================================================================================
+Q    Query Type                    Faithfulness    Answer Relevancy  Context Precision 
+----------------------------------------------------------------------------------------------------
+1    product_factual_lookup        1.000           1.000             1.000             
+2    policy_eligibility            1.000           0.000             0.000             
+3    comparative_recommendation    0.750           0.963             0.450             
+4    seller_policy_lookup          0.333           0.000             0.000             
+5    multi_hop                     0.714           0.000             0.000             
+[2026-09-15 21:05:17] INFO     | __main__           | print_eval_res            | CatalogueIQ overall RAGAS averages: {'faithfulness': 0.7595238095238096, 'answer_relevancy': 0.39254771096704877, 'context_precision': 0.28999999997549997}
+
+
+============================================================
+OVERALL AVERAGES
+============================================================
+faithfulness             : 0.760
+answer_relevancy         : 0.393
+context_precision        : 0.290
+
+
+================================================================================
+CATALOGUEIQ QUERY-TYPE ANALYSIS
+================================================================================
+
+[product_factual_lookup]
+  faithfulness          : 1.000
+  answer_relevancy      : 1.000
+  context_precision     : 1.000
+
+[policy_eligibility]
+  faithfulness          : 1.000
+  answer_relevancy      : 0.000
+  context_precision     : 0.000
+
+[comparative_recommendation]
+  faithfulness          : 0.750
+  answer_relevancy      : 0.963
+  context_precision     : 0.450
+
+[seller_policy_lookup]
+  faithfulness          : 0.333
+  answer_relevancy      : 0.000
+  context_precision     : 0.000
+
+[multi_hop]
+  faithfulness          : 0.714
+  answer_relevancy      : 0.000
+  context_precision     : 0.000
+
+
+================================================================================
+COMPARATIVE RECOMMENDATION PERFORMANCE
+================================================================================
+faithfulness             : 0.750
+answer_relevancy         : 0.963
+context_precision        : 0.450
+
+Comparative recommendation queries are particularly important because they require retrieving and comparing multiple products.
+
+
+[2026-09-15 21:05:17] INFO     | __main__           | evaluate_rag_system       | ======================================================================
+[2026-09-15 21:05:17] INFO     | __main__           | evaluate_rag_system       | CATALOGUEIQ RAGAS EVALUATION FINISHED
+[2026-09-15 21:05:17] INFO     | __main__           | evaluate_rag_system       | ======================================================================
